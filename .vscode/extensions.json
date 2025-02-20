@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "github.copilot",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "prisma.prisma",
+    "humao.rest-client"
+  ]
+}

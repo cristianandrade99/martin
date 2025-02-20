@@ -1,0 +1,18 @@
+{
+  "verbose": true,
+  "ignore": [
+    "node_modules/.cache/",
+    "**/*.test.*",
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/__fixtures__/*",
+    "**/__snapshots__/*",
+    "**/*.json"
+  ],
+  "watch": ["src/**/*", ".env"],
+  "ext": "js ts",
+  "events": {
+    "restart": "tsc"
+  },
+  "exec": "ts-node ./src/index.ts"
+}

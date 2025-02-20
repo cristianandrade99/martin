@@ -1,0 +1,72 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// CATALOGS
+
+model Country {
+  countryId          Int      @id @default(autoincrement()) @map("country_id")
+  countryName        String   @map("name")
+  countryAlpha2Code  String   @map("alpha2_code")
+  countryAlpha3Code  String   @map("alpha3_code")
+  countryNumericCode String   @map("numeric_code")
+  createdAt          DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt          DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+  documentType DocumentType[]
+
+  @@unique([countryAlpha3Code], map: "country_alpha3_code_unique")
+  @@map("country")
+}
+
+model DocumentType {
+  documentTypeId           Int      @id @default(autoincrement()) @map("document_type_id")
+  documentTypeName         String   @map("name")
+  documentTypeAbbreviation String   @map("abbreviation")
+  countryId                Int      @map("country_id")
+  createdAt                DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt                DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+  country             Country              @relation(fields: [countryId], references: [countryId])
+  personDocumentTypes PersonDocumentType[]
+
+  @@unique([countryId, documentTypeName], map: "document_type_country_id_name_unique")
+  @@map("document_type")
+}
+
+// DYNAMIC
+
+model Person {
+  personId      Int      @id @default(autoincrement()) @map("person_id")
+  firstName     String   @map("first_name")
+  secondName    String?  @map("second_name")
+  firstSurname  String   @map("first_surname")
+  secondSurname String?  @map("second_surname")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+  personDocumentTypes PersonDocumentType[]
+
+  @@map("person")
+}
+
+model PersonDocumentType {
+  personId       Int      @map("person_id")
+  documentTypeId Int      @map("document_type_id")
+  documentNumber String   @map("document_number")
+  isPrincipal    Boolean  @default(false) @map("is_principal")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt      DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+  person       Person       @relation(fields: [personId], references: [personId])
+  documentType DocumentType @relation(fields: [documentTypeId], references: [documentTypeId])
+
+  @@id([personId, documentTypeId], map: "person_document_type_pkey")
+  @@map("person_document_type")
+}

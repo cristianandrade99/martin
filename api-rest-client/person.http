@@ -1,0 +1,10 @@
+###
+# Creates a person
+POST {{API_URL}}/person
+Content-Type: application/json
+
+###
+# Get the list of persons
+
+GET {{API_URL}}/person
+Content-Type: application/json
