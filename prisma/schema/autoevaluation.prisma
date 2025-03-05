@@ -1,0 +1,39 @@
+model AutoevaluationDetail {
+    autoevaluationDetailId   Int    @id @default(autoincrement()) @map("autoevaluation_detail_id")
+    autoevaluationDetailName String @map("autoevaluation_detail_name")
+    resolution3100StandardId Int    @map("resolution_3100_standard_id")
+
+    createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    resolution3100Standard         Resolution3100Standard           @relation(fields: [resolution3100StandardId], references: [resolution3100StandardId])
+    AutoevaluationDetailCalculated AutoevaluationDetailCalculated[]
+
+    @@map("autoevaluation_detail")
+}
+
+model Autoevaluation {
+    autoevaluationId   Int      @id @default(autoincrement()) @map("autoevaluation_id")
+    autoevaluationDate DateTime @default(now()) @map("autoevaluation_date") @db.Date()
+
+    createdAt                      DateTime                         @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt                      DateTime                         @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+    AutoevaluationDetailCalculated AutoevaluationDetailCalculated[]
+
+    @@map("autoevaluation")
+}
+
+model AutoevaluationDetailCalculated {
+    autoevaluationDetailCalculatedId         Int   @id @default(autoincrement()) @map("autoevaluation_detail_calculated_id")
+    autoevaluationDetailId                   Int   @map("autoevaluation_detail_id")
+    autoevaluationId                         Int   @map("autoevaluation_id")
+    autoevaluationDetailCalculatedPercentage Float @default(0) @map("autoevaluation_detail_calculated_percentage")
+
+    createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    autoevaluationDetail AutoevaluationDetail @relation(fields: [autoevaluationDetailId], references: [autoevaluationDetailId])
+    autoevaluation       Autoevaluation       @relation(fields: [autoevaluationId], references: [autoevaluationId])
+
+    @@map("autoevaluation_detail_calculated")
+}

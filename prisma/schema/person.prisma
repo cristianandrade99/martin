@@ -1,0 +1,28 @@
+model Person {
+    personId      Int      @id @default(autoincrement()) @map("person_id")
+    firstName     String   @map("first_name")
+    secondName    String?  @map("second_name")
+    firstSurname  String   @map("first_surname")
+    secondSurname String?  @map("second_surname")
+    createdAt     DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    personDocumentTypes PersonDocumentType[]
+
+    @@map("person")
+}
+
+model PersonDocumentType {
+    personId       Int      @map("person_id")
+    documentTypeId Int      @map("document_type_id")
+    documentNumber String   @map("document_number")
+    isPrincipal    Boolean  @default(false) @map("is_principal")
+    createdAt      DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt      DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    person       Person       @relation(fields: [personId], references: [personId])
+    documentType DocumentType @relation(fields: [documentTypeId], references: [documentTypeId])
+
+    @@id([personId, documentTypeId], map: "person_document_type_pkey")
+    @@map("person_document_type")
+}
