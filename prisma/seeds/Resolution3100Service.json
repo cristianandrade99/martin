@@ -1,0 +1,154 @@
+[
+  {
+    "resolution3100ServiceName": "Consulta Externa General",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Consulta Externa" } }
+  },
+  {
+    "resolution3100ServiceName": "Consulta Externa Especializada",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Consulta Externa" } }
+  },
+  {
+    "resolution3100ServiceName": "Vacunación",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Consulta Externa" } }
+  },
+  {
+    "resolution3100ServiceName": "Seguridad y Salud en el Trabajo",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Consulta Externa" } }
+  },
+  {
+    "resolution3100ServiceName": "Terapias",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Servicio Farmacéutico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Radiología Odontológica",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Imágenes Diagnósticas",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Medicina Nuclear",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Radioterapia",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Quimioterapia",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Diagnóstico Vascular",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Hemodinamia e Intervencionismo",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Gestión Pre Transfusional",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Toma de Muestras de Laboratorio Clínico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Laboratorio Clínico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Toma de Muestras de Cuello Uterino y Ginecológicas",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Laboratorio de Citologías Cervico-Uterinas",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Laboratorio de Histotecnología",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Patología",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Diálisis",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" } }
+  },
+  {
+    "resolution3100ServiceName": "Hospitalización",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Hospitalización Paciente Crónico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Básico Neonatal",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intermedio Neonatal",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intensivo Neonatal",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intermedio Pediátrico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intensivo Pediátrico",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intermedio Adulto",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Intensivo Adultos",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Hospitalización en Salud Mental o Consumo de Sustancias Psicoactivas",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Hospitalización Parcial",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cuidado Básico del Consumo de Sustancias Psicoactivas",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Internación" } }
+  },
+  {
+    "resolution3100ServiceName": "Cirugía",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Quirúrgico" } }
+  },
+  {
+    "resolution3100ServiceName": "Urgencias",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Atención Inmediata" } }
+  },
+  {
+    "resolution3100ServiceName": "Transporte Asistencial",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Atención Inmediata" } }
+  },
+  {
+    "resolution3100ServiceName": "Atención Prehospitalaria",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Atención Inmediata" } }
+  },
+  {
+    "resolution3100ServiceName": "Atención del Parto",
+    "resolution3100Group": { "connect": { "resolution3100GroupName": "Atención Inmediata" } }
+  }
+]

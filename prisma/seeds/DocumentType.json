@@ -1,0 +1,52 @@
+[
+  {
+    "documentTypeAbbreviation": "RC",
+    "documentTypeName": "Registro civil de nacimiento",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "TI",
+    "documentTypeName": "Tarjeta de identidad",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "CC",
+    "documentTypeName": "Cedula de ciudadanía",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "TE",
+    "documentTypeName": "Tarjeta de extranjería",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "CE",
+    "documentTypeName": "Cédula de extranjería",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "NIT",
+    "documentTypeName": "Número de identificación tributaria",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "PP",
+    "documentTypeName": "Pasaporte",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "PEP",
+    "documentTypeName": "Permiso especial de permanencia",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "DIE",
+    "documentTypeName": "Documento de identificación extranjero",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  },
+  {
+    "documentTypeAbbreviation": "NUIP",
+    "documentTypeName": "Número único de identificación personal",
+    "country": { "connect": { "countryAlpha3Code": "COL" } }
+  }
+]

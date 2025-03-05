@@ -35,7 +35,11 @@ const getPersons = async () => {
     include: {
       personDocumentTypes: {
         include: {
-          documentType: true
+          documentType: {
+            include: {
+              country: true
+            }
+          }
         }
       }
     }

@@ -3,30 +3,38 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prisma": {
+    "seed": "npx tsx prisma/seed.ts"
+  },
   "scripts": {
     "back": "nodemon",
     "build": "tsc",
     "dev:docker:postgres": "docker-compose up -d --build postgres",
     "dev:prisma:push": "npx prisma db push"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
+    "@prisma/client": "^6.4.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.4",
     "eslint-plugin-perfectionist": "^4.9.0",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^15.15.0",
-    "prisma": "^6.4.0",
+    "prisma": "^6.4.1",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1"
   },
   "dependencies": {
-    "@prisma/client": "^6.4.0",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "i": "^0.3.7",
+    "npm": "^11.1.0",
+    "serialize-error-cjs": "^0.2.0",
     "zod": "^3.24.2"
   }
 }

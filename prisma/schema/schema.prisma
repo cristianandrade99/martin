@@ -29,6 +29,7 @@ model DocumentType {
   documentTypeId           Int      @id @default(autoincrement()) @map("document_type_id")
   documentTypeName         String   @map("name")
   documentTypeAbbreviation String   @map("abbreviation")
+  documentTypeIsActive     Boolean  @default(false) @map("is_active")
   countryId                Int      @map("country_id")
   createdAt                DateTime @default(now()) @map("created_at") @db.Timestamp(6)
   updatedAt                DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
@@ -38,6 +39,30 @@ model DocumentType {
 
   @@unique([countryId, documentTypeName], map: "document_type_country_id_name_unique")
   @@map("document_type")
+}
+
+model Resolution3100Group {
+  resolution3100GroupId   Int                     @id @default(autoincrement()) @map("resolution_3100_group_id")
+  resolution3100GroupName String                  @map("resolution_3100_group_name")
+  createdAt               DateTime                @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt               DateTime                @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+  Resolution3100Service   Resolution3100Service[]
+
+  @@unique([resolution3100GroupName], map: "resolution_3100_group_name_unique")
+  @@map("resolution_3100_group")
+}
+
+model Resolution3100Service {
+  resolution3100ServiceId   Int      @id @default(autoincrement()) @map("resolution_3100_service_id")
+  resolution3100ServiceName String   @map("resolution_3100_service_name")
+  resolution3100GroupId     Int      @map("resolution_3100_group_id")
+  createdAt                 DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt                 DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+  resolution3100Group Resolution3100Group @relation(fields: [resolution3100GroupId], references: [resolution3100GroupId])
+
+  @@unique([resolution3100ServiceName], map: "resolution_3100_service_name_unique")
+  @@map("resolution_3100_service")
 }
 
 // DYNAMIC

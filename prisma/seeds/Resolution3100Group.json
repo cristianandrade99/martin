@@ -1,0 +1,7 @@
+[
+  { "resolution3100GroupName": "Consulta Externa" },
+  { "resolution3100GroupName": "Apoyo Diagnóstico y Complementación Terapéutica" },
+  { "resolution3100GroupName": "Internación" },
+  { "resolution3100GroupName": "Quirúrgico" },
+  { "resolution3100GroupName": "Atención Inmediata" }
+]
