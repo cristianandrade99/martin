@@ -1,0 +1,10 @@
+model Vehicle {
+    vehicleId           Int      @id @default(autoincrement()) @map("vehicle_id")
+    organizationId      Int      @map("organization_id")
+    vehicleLicensePlate String   @map("vehicle_license_plate")
+    createdAt           DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt           DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    VehicleAutoevaluation VehicleAutoevaluation[]
+    organization          Organization            @relation(fields: [organizationId], references: [organizationId])
+}

@@ -1,8 +1,8 @@
 import 'express-async-errors';
-import express, { Request, Response } from 'express';
+import express from 'express';
 
 import { errorMiddleware, loggerMiddleware, notFoundMiddleware } from './middlewares';
-import { Person } from './models/PersonModel';
+import personRouter from './routes/personRoutes';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,27 +10,16 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
+// Logger middleware
 app.use(loggerMiddleware);
 
 // Routes
-app.post('/person', async (_: Request, res: Response) => {
-  const createdPerson = await Person.createPerson({
-    documentNumber: '1026306617',
-    documentTypeId: 3,
-    firstName: 'Cristian',
-    firstSurname: 'Andrade'
-  });
+app.use('/person', personRouter);
 
-  res.status(200).json(createdPerson);
-});
-
-app.get('/person', async (_: Request, res: Response) => {
-  res.status(200).json(await Person.getPersons());
-});
-
+// Unhandled routes
 app.all('*', notFoundMiddleware);
 
-// Error
+// Error middleware
 app.use(errorMiddleware);
 
 // Start server

@@ -12,17 +12,6 @@ model AutoevaluationDetail {
     @@map("autoevaluation_detail")
 }
 
-model Autoevaluation {
-    autoevaluationId   Int      @id @default(autoincrement()) @map("autoevaluation_id")
-    autoevaluationDate DateTime @default(now()) @map("autoevaluation_date") @db.Date()
-
-    createdAt                      DateTime                         @default(now()) @map("created_at") @db.Timestamp(6)
-    updatedAt                      DateTime                         @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
-    AutoevaluationDetailCalculated AutoevaluationDetailCalculated[]
-
-    @@map("autoevaluation")
-}
-
 model AutoevaluationDetailCalculated {
     autoevaluationDetailCalculatedId         Int   @id @default(autoincrement()) @map("autoevaluation_detail_calculated_id")
     autoevaluationDetailId                   Int   @map("autoevaluation_detail_id")
@@ -36,4 +25,32 @@ model AutoevaluationDetailCalculated {
     autoevaluation       Autoevaluation       @relation(fields: [autoevaluationId], references: [autoevaluationId])
 
     @@map("autoevaluation_detail_calculated")
+}
+
+model Autoevaluation {
+    autoevaluationId   Int      @id @default(autoincrement()) @map("autoevaluation_id")
+    organizationId     Int      @map("organization_id")
+    autoevaluationDate DateTime @default(now()) @map("autoevaluation_date") @db.Date()
+    createdAt          DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt          DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    AutoevaluationDetailCalculated AutoevaluationDetailCalculated[]
+    VehicleAutoevaluation          VehicleAutoevaluation[]
+    organization                   Organization                     @relation(fields: [organizationId], references: [organizationId])
+
+    @@map("autoevaluation")
+}
+
+model VehicleAutoevaluation {
+    vehicleAutoevaluationId Int @id @default(autoincrement()) @map("vehicle_autoevaluation_id")
+    vehicleId               Int @map("vehicle_id")
+    autoevaluationId        Int @map("autoevaluation_id")
+
+    createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    vehicle        Vehicle        @relation(fields: [vehicleId], references: [vehicleId])
+    autoevaluation Autoevaluation @relation(fields: [autoevaluationId], references: [autoevaluationId])
+
+    @@map("vehicle_autoevaluation")
 }

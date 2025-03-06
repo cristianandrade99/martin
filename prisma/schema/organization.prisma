@@ -1,0 +1,67 @@
+model Organization {
+    organizationId             Int      @id @default(autoincrement()) @map("organization_id")
+    organizationName           String   @map("organization_name")
+    documentTypeId             Int      @map("document_type_id")
+    organizationDocumentNumber String   @map("organization_document_number")
+    createdAt                  DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt                  DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    documentType        DocumentType          @relation(fields: [documentTypeId], references: [documentTypeId])
+    User                User[]
+    Vehicle             Vehicle[]
+    Autoevaluation      Autoevaluation[]
+    OrganizationService OrganizationService[]
+
+    @@map("organization")
+}
+
+model User {
+    userId         Int      @id @default(autoincrement()) @map("user_id")
+    personId       Int      @map("person_id")
+    organizationId Int      @map("organization_id")
+    createdAt      DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt      DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    person       Person       @relation(fields: [personId], references: [personId])
+    organization Organization @relation(fields: [organizationId], references: [organizationId])
+    UserRole     UserRole[]
+
+    @@map("user")
+}
+
+model Role {
+    roleId   Int    @id @default(autoincrement()) @map("role_id")
+    roleName String @map("role_name")
+
+    createdAt DateTime   @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt DateTime   @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+    UserRole  UserRole[]
+
+    @@map("role")
+}
+
+model UserRole {
+    userId Int @map("user_id")
+    roleId Int @map("role_id")
+
+    createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    user User @relation(fields: [userId], references: [userId])
+    role Role @relation(fields: [roleId], references: [roleId])
+
+    @@id([userId, roleId], map: "user_role_pkey")
+    @@map("user_role")
+}
+
+model OrganizationService {
+    organizationId          Int      @map("organization_id")
+    resolution3100ServiceId Int      @map("resolution_3100_service_id")
+    createdAt               DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+    updatedAt               DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
+
+    organization          Organization          @relation(fields: [organizationId], references: [organizationId])
+    resolution3100Service Resolution3100Service @relation(fields: [resolution3100ServiceId], references: [resolution3100ServiceId])
+
+    @@id([organizationId, resolution3100ServiceId], map: "organization_service_pkey")
+}

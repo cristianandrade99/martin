@@ -8,6 +8,7 @@ model Person {
     updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(6)
 
     personDocumentTypes PersonDocumentType[]
+    User                User[]
 
     @@map("person")
 }
